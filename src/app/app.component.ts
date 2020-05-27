@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
     this.postService.create(post)
       .subscribe(response => {
         this.posts.splice(0, 0, post);  //push(post) add bottom page one  so we used splice to add top page
-        // start at 0 then remove 0 then append post
+        // start at 0 then remove 0 then append post.
       });
 
   }
