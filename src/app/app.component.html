@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 padding-left-55 margin-top-10">
+      <input type="text" class="form-control" #title (keyup.enter)="createPost(title)" placeholder="Add Title Of Post">
+      <!-- #title or title.value to access value -->
+    </div>
+
+    <div class="col-12 margin-top-10">
+      <ul class="liis-group">
+
+        <li class="list-group-item text-center cursor padding-bottom-30 " *ngFor="let post of posts"
+          title="{{post.title}}" [routerLink]="['/posts',post.id]">
+          <button class="btn btn-primary float-lg-left" (click)="updatePost(post,title.value)"> Update Post </button>
+          {{post.title}}
+
+          <button class="btn btn-danger float-lg-right" (click)="deletePost(post)">Delete Post</button>
+        </li>
+
+
+      </ul>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+<!--
+<a routerLink="/post"></a>
+<button class="btn btn-primary" (click)="updatePost(post,title.value)">Update Post </button>
+-->
+
+<!--
+<a routerLink="/posts/post.id"></a>
+<a routerLink="['/posts',post.id]">
+  {{post.title}} {{post.body}}
+  <a [routerLink]="['/posts',post.id]">{{post.title}}</a>
+
+-->
